@@ -1,0 +1,17 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h1>Ecommerce-Store</h1>
+  <p>Welcome to Ecommerce-Store, a website developed by <em>Kgalabi Simon Mongatane as personal project</em>!</p>
+  <h2>Dynamic content</h2>
+  <p>The Ecommerce-Store has the following product category:</p>
+  <ul>
+      {% if product_category %}
+        {% for product in product_category %}
+            <li><a href="">{{product.name}}</a></li>
+        {% endfor %}
+      {% endif %}
+
+
+  </ul>
+{% endblock %}
