@@ -20,3 +20,13 @@ def index(request):
 
 class ProductList(ListView):
     model = Product
+
+
+def product_cart(request):
+    """View show product for product cart"""
+    product = Product.objects.all()
+    context = {
+        'product': product,
+    }
+
+    return render(request, 'product_cart.html', context)
