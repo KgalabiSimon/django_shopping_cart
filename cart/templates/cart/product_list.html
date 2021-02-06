@@ -4,14 +4,12 @@
 <div class="container">
             {%  for product in products  %}
                 {% if forloop.counter0|divisibleby:3 %} <div class="row text-center"> {%  endif %}
-                  <div class="col-md-4" onclick="window.location.href=''" style="cursor: pointer">
+                  <div class="col-md-4" onclick="window.location.href='{{product.get_absolute_url}}'" style="cursor: pointer">
                       <div class="card">
                           <img src="http://placehold.it/300X150" alt="">
                           <div class="card-content">
-                              <hr>
                                <h3>{{ product.name }}</h3>
                                <p>{{ product.description }}</p>
-
                           </div><!-- card content -->
                       </div><!-- card -->
                   </div><!-- col-md-4 -->

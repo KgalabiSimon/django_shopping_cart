@@ -1,0 +1,11 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+<div class="product-detail">
+    <img src="http://placehold.it/300X150" alt="">
+    <h1>{{ product.name }}</h1>
+    <h2><a href=" ">{{ product.category }}</a></h2>
+    <p class="price">R{{ product.price }}</p>
+  </div>
+
+{% endblock %}

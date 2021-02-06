@@ -1,8 +1,10 @@
-from django.shortcuts import render
-
-# Create your views here.
+from django.shortcuts import render, redirect, get_object_or_404
+from django.views.decorators.http import require_POST
 from .models import Product, Category
 from django.views.generic import ListView
+from .cart import *
+from .cart import Cart
+from .forms import CartAddProductForm
 
 
 def index(request):
@@ -22,11 +24,21 @@ class ProductList(ListView):
     model = Product
 
 
-def product_cart(request):
-    """View show product for product cart"""
+def product_list(request):
+    """View show all the products in the store"""
     product = Product.objects.all()
     context = {
-        'product': product,
+        'products': product,
     }
 
-    return render(request, 'product_cart.html', context)
+    return render(request, 'cart/product_list.html', context)
+
+
+def product_detail(request, product_id):
+    product = get_object_or_404(Product, id=product_id)
+
+    context = {
+       'product': product,
+    }
+    return render(request, 'cart/product_detail.html', context)
+

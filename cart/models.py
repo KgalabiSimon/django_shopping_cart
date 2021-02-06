@@ -1,5 +1,5 @@
 from django.db import models
-
+from django.urls import reverse
 
 
 # Create your models here.
@@ -25,6 +25,10 @@ class Product(models.Model):
     def items_bought(self):
         """adds and appends the number of products bought """
         self.items_bought += 1
+
+    def get_absolute_url(self):
+        """Returns the url to access a particular product instance."""
+        return reverse('product-detail', args=[str(self.id)])
 
     def __str__(self):
         """String for representing the Model object."""
