@@ -36,9 +36,42 @@ def product_list(request):
 
 def product_detail(request, product_id):
     product = get_object_or_404(Product, id=product_id)
+    cart_product_form = CartAddProductForm()
 
     context = {
-       'product': product,
+        'product': product,
+        'cart_product_form': cart_product_form,
+
     }
     return render(request, 'cart/product_detail.html', context)
 
+
+def add_product_cart_form(request, product_id):
+    """form for adding a product to their cart"""
+    cart = Cart(request)
+    product = get_object_or_404(Product, id=product_id)
+    form = CartAddProductForm(request.POST)
+    if form.is_valid():
+        cd = form.cleaned_data
+        cart.add(product=product,
+                 quantity=cd['quantity'],
+                 update_quantity=cd['update'])
+    return redirect('cart-detail')
+
+
+def cart_detail(request):
+    """View for displaying the cart"""
+    cart = Cart(request)
+    context = {
+        'cart': cart
+    }
+    return render(request, 'cart/detail.html', context)
+
+
+def cart_remove(request, product_id):
+    """view for removing product in the cart"""
+
+    cart = Cart(request)
+    product = get_object_or_404(Product, id=product_id)
+    cart.remove(product)
+    return redirect('cart-detail')
