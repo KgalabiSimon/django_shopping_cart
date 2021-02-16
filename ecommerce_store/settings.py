@@ -25,7 +25,9 @@ SECRET_KEY = '$hm5hai(_vf4^%1*252kv*(d(2sw!yqi^v101^_#6a472ho2&m'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'https://desolate-reaches-69320.herokuapp.com/', '127.0.0.1'
+]
 
 
 # Application definition
