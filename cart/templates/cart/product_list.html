@@ -2,6 +2,7 @@
 
 {% block content %}
 <div class="container">
+
             {%  for product in products  %}
                 {% if forloop.counter0|divisibleby:3 %} <div class="row text-center"> {%  endif %}
                   <div class="col-md-4" onclick="window.location.href='{{product.get_absolute_url}}'" style="cursor: pointer">

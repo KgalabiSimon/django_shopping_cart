@@ -27,6 +27,7 @@ class ProductList(ListView):
 def product_list(request):
     """View show all the products in the store"""
     product = Product.objects.all()
+
     context = {
         'products': product,
     }
@@ -75,3 +76,4 @@ def cart_remove(request, product_id):
     product = get_object_or_404(Product, id=product_id)
     cart.remove(product)
     return redirect('cart-detail')
+

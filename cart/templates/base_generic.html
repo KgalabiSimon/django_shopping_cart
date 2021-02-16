@@ -17,16 +17,10 @@
         <ul class="sidebar-nav">
           <li><a href="{% url 'index'%}">Home</a></li>
           <li><a href="{% url 'products-list'%}">All Products</a></li>
-          {% if user.is_authenticated %}
-          <li>User: {{ user.get_username }}</li>
           <li><a href=" {% url 'cart-detail' %}">My Cart</a></li>
-          <li><a href="">Logout</a></li>
-          {% else %}
-          <li><a href="">Login</a></li>
-          <hr>
-          <li>Staff</li>
-          <li><a href="">All Orders</a></li>
-          {% endif %}
+
+
+
         </ul>
      {% endblock %}
       </div>
