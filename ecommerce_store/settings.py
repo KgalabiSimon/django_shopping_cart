@@ -26,8 +26,8 @@ SECRET_KEY = '$hm5hai(_vf4^%1*252kv*(d(2sw!yqi^v101^_#6a472ho2&m'
 DEBUG = False
 
 ALLOWED_HOSTS = [
-    'https://desolate-reaches-69320.herokuapp.com/'
-
+    'https://desolate-reaches-69320.herokuapp.com/',
+    '127.0.0.1'
 ]
 
 
@@ -135,7 +135,7 @@ DATABASES['default'].update(db_from_env)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 # The absolute path to the directory where collectstatic will collect static files for deployment.
-STATIC_ROOT = BASE_DIR / 'staticfiles'  #. os.path.join(BASE_DIR, 'staticfiles')
+#STATIC_ROOT = BASE_DIR / 'staticfiles'  #. os.path.join(BASE_DIR, 'staticfiles')
 
 # The URL to use when referring to static files (where they will be served from)
 STATIC_URL = '/static/'
