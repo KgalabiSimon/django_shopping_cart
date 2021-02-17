@@ -26,7 +26,8 @@ SECRET_KEY = '$hm5hai(_vf4^%1*252kv*(d(2sw!yqi^v101^_#6a472ho2&m'
 DEBUG = False
 
 ALLOWED_HOSTS = [
-    'https://desolate-reaches-69320.herokuapp.com/', '127.0.0.1'
+    'https://desolate-reaches-69320.herokuapp.com/'
+
 ]
 
 
