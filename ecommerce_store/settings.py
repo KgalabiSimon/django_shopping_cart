@@ -24,11 +24,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = '$hm5hai(_vf4^%1*252kv*(d(2sw!yqi^v101^_#6a472ho2&m'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
-
+#DEBUG = False
+DEBUG = os.environ.get('DJANGO_DEBUG', '') != 'False'
 ALLOWED_HOSTS = [
     'https://desolate-reaches-69320.herokuapp.com/',
-    '127.0.0.1'
+    '127.0.0.1',
+    '127.0.0.1:8000'
 ]
 
 
@@ -144,3 +145,4 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 import dj_database_url
 db_from_env = dj_database_url.config(conn_max_age=500)
 DATABASES['default'].update(db_from_env)
+
