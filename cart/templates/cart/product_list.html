@@ -7,7 +7,8 @@
                 {% if forloop.counter0|divisibleby:3 %} <div class="row text-center"> {%  endif %}
                   <div class="col-md-4" onclick="window.location.href='{{product.get_absolute_url}}'" style="cursor: pointer">
                       <div class="card">
-                          <img src="http://placehold.it/300X150" alt="">
+                          {% load static %}
+                          <img src="{% static 'cart/nokia.jpg' %}" alt="">
                           <div class="card-content">
                                <h3>{{ product.name }}</h3>
                                <p>{{ product.description }}</p>

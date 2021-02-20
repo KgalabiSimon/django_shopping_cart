@@ -19,6 +19,7 @@ class Product(models.Model):
     price = models.IntegerField()
     category = models.ForeignKey(Category, on_delete=models.CASCADE, )
     items_bought = models.IntegerField()
+    image = models.ImageField(upload_to='cart/static/cart')
 
     def items_bought(self):
         """adds and appends the number of products bought """
