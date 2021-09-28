@@ -77,4 +77,3 @@ def cart_remove(request, product_id):
     cart.remove(product)
     return redirect('cart-detail')
 
-def cellphones(request)
